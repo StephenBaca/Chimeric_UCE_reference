@@ -42,7 +42,7 @@ We can use these metrics as a way to sort the 'best' samples from which to build
 #You will have to adjust according to your sample names. 
 If your sample names do not have a common string to call to; you might have to set an array and run the script in a for loop. I'll include an example of this.
 
-> cat logfilename.log | grep SLE | cut -d " " -f 8,9,10,13 > match_probes_summary.txt
+/ cat logfilename.log | grep SLE | cut -d " " -f 8,9,10,13 > match_probes_summary.txt
 
 # for samples with varied names. (E.g. useful if you are using organism names as samples)
 
