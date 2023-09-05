@@ -39,7 +39,7 @@ Trims and sorts output summary of UCE probe matching
 
 This script returns a consolidated summary of matched loci that includes %unique, no. of contigs, etc. from log output of match_contigs_to_probes. You will have to adjust according to your sample names. If your sample names do not have a common string you may have to set an array and run the script in a for loop (see below for example).
 
-Translation of script: ` cat ` read the log file, ` grep ` search for <sample string> , ` cut ` cut `-d ` by delimiter "space", ` -f ` field nos. ` 8,9.... `, ` > ` print to file name. 
+Translation of script: ` cat ` read the log file, ` grep ` search for <sample string> , ` cut ` cut `-d ` by delimiter "space", ` -f 8,9.... ` fields (portions separated by delimeter) 8,9,..., ` > ` print to file name. 
 
 ` cat logfilename.log | grep SLE | cut -d " " -f 8,9,10,13 > match_probes_summary.txt `
 
