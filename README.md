@@ -14,17 +14,18 @@ This will add all loci represented in your dataset to a single reference sequenc
 Huge thanks to Dr. Paul Hime for his help with bash scripts, particularly in components of the final chimeric assembly loop. 
 
 This workflow details how I built a chimeric reference from UCE locus alignments to maximize SNP dataset size and locus coverage.
-It is not an 'elegant' workflow. Just simple manupulation fastas in Bash/unix.
+It is not an 'elegant' workflow. Just simple manupulations of fastas and other files in Bash/unix.
 
 ### In brief:
   1. We select a sample with good data capture to use as base of our chimeric reference - lets call it Sample_1.
   2. We explode the alignments by taxon, wich outputs the extracted UCEs seperately for each sample. 
   3. Make a list of all UCEs present across dataset: UCE.list
-  4. Starting with Sample_1: match all loci present in UCE.list to loci in Sample_1.fasta.
-  4. Copy matched locus sequences to chimaric.fasta; remove successful matches from UCE.list.
-  5. Move to next sample (sample_2); match all remaining loci in list to loci in Sample_2.fasta. 
-  6. Augment chimeric.fasta with new matched loci sequences. Remove successful matches from UCE.list
-  7. Proceed until all loci in UCE.list have been removed (when all loci in dataset are in reference sequence).
+  4. Starting with Sample_1 the chimeric assemly loop does the following:
+  5. Matches all loci present in UCE.list to loci in Sample_1.fasta.
+  6. Copies matched locus sequences to chimaric.fasta; removes successful matches from UCE.list.
+  7. Moves to next sample (sample_2); matches all remaining loci in UCE.list to loci in Sample_2.fasta. 
+  8. Adds new matched loci sequences to Chimera.fasta; Removes successful matches from UCE.list
+  9. Loop proceeds until all loci in UCE.list have been removed (when all loci in dataset are in reference sequence).
 
 End result is single fasta with a single representative copy of each UCE that we then use for read mapping/SNP calling.
  
