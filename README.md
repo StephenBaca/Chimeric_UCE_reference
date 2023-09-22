@@ -5,12 +5,12 @@ From "A shallow-scale phylogenomics approach reveals parallel patterns of divers
 
 ### Summary
 Building a population-wide UCE SNP dataset requires a common reference for mapping sample reads. 
-Optimally you would use a genome for this. However, a genome within your system may not be available for accurate read mapping for SNP extraction 
+Optimally you would use a genome for this. However, a genome within your system may not be available for accurate read mapping for SNP extraction. 
 In absence of a genome, one option is to use a single sample's UCE sequence. This is fine if your dataset has high per-locus taxon representation, i.e. high levels of data completeness by taxon. 
 However in the case of my Notomicrus dataset, ca. 2000 total loci were present in the matrix, but maxed at ca. 1200 loci in a given individual. 
 This means there is variable taxon representation across each locus, and/or maybe a few taxa with many loci that weren't widely distributed across the dataset.
 If your dataset shows similar disparity in per-locus taxon representation, you may want to consider using a 'chimeric' reference.
-This workflow will add extrac representative sequences for each locus represented in your dataset to a single reference sequence for read mapping and SNP extraction to maximize the size and quality of the SNP dataset. It is not an elegant workflow. Just simple manupulations of fastas, Phyluce outputs and other files in Bash/unix.
+This workflow will extract representative sequences for each locus in your dataset and add it to a single reference sequence for read mapping and SNP extraction to maximize the size and quality of the SNP dataset. It is not an elegant workflow. Just simple manupulations of fastas, Phyluce outputs and other files in Bash/unix.
 
 Note that this method is conceptually similar to one developed by Hird et al. (2011) to produce a provisional reference genome. 
 Hird, S. M., Brumfield, R. T., & Carstens, B. C. (2011). PRGmatic: an efficient pipeline for collating genome‐enriched second‐generation sequencing data using a ‘provisional‐reference genome’. Molecular Ecology Resources, 11(4), 743-748.
