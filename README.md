@@ -81,7 +81,7 @@ However you chose, the log file goes from this...:
 ...
 ```
 
-...to this (Sample, loci, percent unique, total contigs):
+...to this (Sample, loci count, percent unique, total contigs):
 
 ```
 > SLE1273: 1237 (6.33%) 19548
@@ -104,7 +104,9 @@ SLE1537: 1278 5.21% 24549
 SLE1631: 1245 4.88% 25533
 ```
 
-### 1-3. Sort by contig count, alternatively you could do by %unique or (UCE loci e.g.)
+### 1-3. Sort by contig count
+Alternatively you could do by %unique or loci count e.g.
+
 program options used:
 ` -r `  reverse order; 
 ` -k  ` field to sort; `4n ` = 4th field (contigs in this case)
@@ -131,11 +133,11 @@ Make a directory for chimera assembly (in same directory as the exploded fasta o
 
 `mkdir Chimera_ref `
 
-Copy sequences to directory from exploded_fastas directory and navigate into it. THis is where you will build your chimeric reference.
+Copy sequences to directory from exploded_fastas directory and navigate into it. This is where you will build your chimeric reference.
 ```
 cp exploded_fastas/*.fasta Chimera_ref/ 
 
-` cd Chimera_ref/
+cd Chimera_ref/
 
 ```
 
@@ -151,6 +153,7 @@ for i in *.fasta;
 do SINGLENAME=`echo $i | sed 's/unaligned/singleline/g'`;
 awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' $i > $SINGLENAME;
 done
+
 ```
 
 Remove interleaved fastas (should be copies from exploded fasta directory!!!!)
@@ -176,7 +179,8 @@ This script will harvest all UCE locus names in each sample fasta. Note that we 
 for i in *.fasta; 
 do LISTNAME=`echo $i | sed 's/singleline.fasta/loci.list/g'`; 
 grep ">" $i | cut -d "|" -f 2 > $LISTNAME; 
-done;
+done
+
 ```
 
 ### 3-2. Use `sort` to list all unique UCEs in dataset
@@ -217,6 +221,7 @@ Set an array to your list of sorted Sample fastas
 Check it
 
 ` echo $array`
+Should work but can also try ` echo "${array[@]}" ' if it doesnt print the array correctly.
 
 
 ### 4.2 Final assembly 
