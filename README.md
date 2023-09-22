@@ -220,8 +220,7 @@ Set an array to your list of sorted Sample fastas
 
 Check it
 
-` echo $array`
-Should work but can also try ` echo "${array[@]}" ' if it doesnt print the array correctly.
+` echo $array` Should work but can also try ` echo "${array[@]}" ` if it doesnt print the array correctly.
 
 
 ### 4.2 Final assembly 
