@@ -1,7 +1,7 @@
 # Chimeric_UCE_reference
 Construct a reference for mapping UCE reads from extracted UCE sequences.  
 
-From "A shallow-scale phylogenomics approach reveals parallel patterns of diversification among sympatric populations of cryptic Neotropical aquatic beetles (Coleoptera: Noteridae)."
+From "A shallow-scale phylogenomics approach reveals parallel patterns of diversification among sympatric populations of cryptic Neotropical aquatic beetles (Coleoptera: Noteridae)." http://dx.doi.org/10.1101/2023.09.28.559972
 
 ### Summary
 Building a population-wide UCE SNP dataset requires a common reference for mapping sample reads. 
